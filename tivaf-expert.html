@@ -84,23 +84,8 @@
             border-radius: 0.6rem;
             margin: 1rem 0;
             overflow-x: auto;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 500;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            background: white;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 0.6rem;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background: #e9ddd2;
         }
         .footer {
             background: #2c2418;
@@ -110,10 +95,7 @@
             font-size: 0.85rem;
             margin-top: 2rem;
         }
-        .footer a {
-            color: #d9b48b;
-            text-decoration: none;
-        }
+        .footer a { color: #d9b48b; text-decoration: none; }
         @media (max-width: 700px) {
             .sub-hero h1 { font-size: 1.6rem; }
             h2 { font-size: 1.4rem; }
@@ -125,6 +107,7 @@
 <div class="nav-bar">
     <a href="index.html">🏠 Home</a>
     <a href="tivaf-rookie.html">🍇 Rookie Guide</a>
+    <a href="for-stakeholders.html">💼 For Stakeholders</a>
     <a href="#contact">Contact</a>
 </div>
 
@@ -155,11 +138,11 @@
     </div>
     <div class="pillar">
         <h3>Pillar 4 – Hedonic pricing under data opacity</h3>
-        <p>The framework uses a log‑linear hedonic model (Equation 1 from the original TIVAF paper):</p>
+        <p>The framework uses a log‑linear hedonic model. The exact specification (Equation 1) is:</p>
         <div class="equation">
-            ln(Price<sub>ic</sub>) = β<sub>0</sub> + β<sub>1</sub> Tourism<sub>i</sub> + β<sub>2</sub> Digital<sub>i</sub> + β<sub>3</sub> Thickness<sub>i</sub> + β<sub>4</sub> Attributes<sub>i</sub> + β<sub>5</sub> Region<sub>i</sub> + ε<sub>ic</sub>
+            ln(Price<sub>ic</sub>) = β₀ + β₁Tourism<sub>i</sub> + β₂ Digital<sub>i</sub> + β₃ Thickness<sub>i</sub> + β₄ Attributes<sub>i</sub> + β₅ Region<sub>i</sub> + ε<sub>ic</sub>
         </div>
-        <p>Where <em>Tourism</em> is a binary indicator (structured tourism offer), <em>Digital</em> and <em>Thickness</em> are indices from Pillars 3 and 1, <em>Attributes</em> includes organic certification and appellation sub‑category, and <em>Region</em> captures baseline differences between Pignoletto DOCG and Priorat DOQ.</p>
+        <p>Where <em>Tourism</em> is binary (structured tourism offer), <em>Digital</em> and <em>Thickness</em> are indices from Pillars 3 and 1, <em>Attributes</em> includes organic certification and appellation sub‑category, and <em>Region</em> captures baseline differences between Pignoletto DOCG and Priorat DOQ.</p>
         <p><strong>Estimation:</strong> OLS with heteroskedasticity‑robust standard errors, nested specifications, leave‑one‑out sensitivity. <strong>Interpretation:</strong> Exploratory associations (not causal); coefficients approximate percentage differences in price.</p>
     </div>
 
@@ -176,13 +159,23 @@
         <li>Omits vintage and critic scores (mitigated by focusing on entry‑level wines).</li>
     </ul>
 
-    <h2 id="contact">7. Citation & contact</h2>
+    <h2>7. Future applications & replicability</h2>
+    <p>TIVAF is not limited to wine. The four‑pillar design – institutional audit, multi‑channel price mapping, digital narrative scoring, and parsimonious hedonic pricing – is <strong>transferable to any geographical indication (GI) or heritage‑based agricultural product</strong>, including:</p>
+    <ul>
+        <li>Olive oil appellations (e.g., extra virgin olive oil PDOs)</li>
+        <li>Dairy products (PDO cheeses, mountain dairies)</li>
+        <li>Craft and textile GI districts</li>
+        <li>Rural tourism networks beyond wine</li>
+    </ul>
+    <p>The methodology is replicable because all instruments (observation rubrics, price mapping forms, digital scoring sheets) are openly documented and require no proprietary data. Researchers and consortia can adapt the codebook and indices to their own product and territory with minimal modification.</p>
+
+    <h2 id="contact">8. Citation & contact</h2>
     <p><strong>To cite TIVAF:</strong> Molina Aguirre, G.F. (2025). Tourism‑Institutional Value Appropriation Framework (TIVAF): A mixed‑methods diagnostic for small wine regions. Working paper, UNICAS/URV.</p>
     <p>📧 <strong>giovannifrancisco.molinaaguirre@unicas.it</strong> &nbsp;|&nbsp; <a href="index.html">Back to main page</a></p>
 </div>
 
 <div class="footer">
-    <p>© 2025 Giovanni F. Molina Aguirre – TIVAF licensed under CC BY‑NC 4.0. <a href="index.html">Home</a> | <a href="tivaf-rookie.html">Rookie version</a></p>
+    <p>© 2025 Giovanni F. Molina Aguirre – TIVAF licensed under CC BY‑NC 4.0. <a href="index.html">Home</a> | <a href="tivaf-rookie.html">Rookie version</a> | <a href="for-stakeholders.html">For stakeholders</a></p>
 </div>
 </body>
 </html>

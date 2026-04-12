@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni F. Molina Aguirre | TIVAF – Wine Tourism Value Framework</title>
     <style>
-        /* -----------------------------------------------
-           VARIABLES (change colors, fonts, spacing here)
-        ----------------------------------------------- */
         :root {
             --wine: #8b2c1d;
             --wine-light: #b1624b;
@@ -34,11 +31,11 @@
             line-height: 1.5;
         }
 
-        /* Hero section with terroir background */
+        /* Hero section with watermark background (50% opacity effect) */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1506377245367-ffa4f63e7a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('header.jpg');
             background-size: cover;
             background-position: center 30%;
             padding: 4rem 1.5rem;
@@ -106,7 +103,7 @@
             padding: 2rem 1.5rem;
         }
 
-        /* Personal info card (about the researcher) */
+        /* Personal info card */
         .profile-card {
             background: white;
             border-radius: 1.5rem;
@@ -122,6 +119,14 @@
 
         .profile-text {
             flex: 2;
+        }
+
+        .about-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--wine-light);
+            margin-bottom: 0.3rem;
         }
 
         .profile-text h2 {
@@ -196,10 +201,10 @@
             color: #5c4a3a;
         }
 
-        /* Four pillars grid */
+        /* Pillars grid - 2 columns for desktop, 1 for mobile */
         .pillars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.8rem;
             margin: 2rem 0;
         }
@@ -247,40 +252,48 @@
             border-left: 3px solid var(--wine-light);
         }
 
-        /* Buttons for rookie/expert versions */
+        /* Version selection buttons */
+        .version-selection {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+        }
+        .version-selection p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
         .button-group {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
-
         .btn {
             display: inline-block;
             background: var(--wine);
             color: white;
-            padding: 0.7rem 1.6rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: 0.2s;
+            font-size: 1rem;
+            min-width: 200px;
+            text-align: center;
         }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--wine);
-            color: var(--wine);
-        }
-
-        .btn-outline:hover {
-            background: var(--wine);
-            color: white;
-        }
-
         .btn:hover {
             background: var(--olive);
             transform: translateY(-2px);
+        }
+
+        .teaser-note {
+            text-align: center;
+            background: #fef3e8;
+            padding: 1rem;
+            border-radius: 2rem;
+            margin: 1rem 0 2rem;
+            font-style: italic;
         }
 
         /* Footer */
@@ -303,6 +316,11 @@
             .profile-card { flex-direction: column; text-align: center; }
             .profile-text .title { text-align: left; }
             .section-title { font-size: 1.6rem; }
+            .btn { min-width: 160px; padding: 0.6rem 1.2rem; }
+            .pillars-grid {
+                grid-template-columns: 1fr; /* stack on mobile */
+                gap: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -316,7 +334,7 @@
     <a href="#contact">Contact</a>
 </div>
 
-<!-- Hero header with wine terroir background -->
+<!-- Hero header with header.jpg as 50% watermark -->
 <div class="hero">
     <div class="hero-badge">Tourism‑Institutional Value Appropriation Framework</div>
     <h1>TIVAF</h1>
@@ -324,9 +342,10 @@
 </div>
 
 <div class="container">
-    <!-- Personal profile section (like an "about me" card) -->
+    <!-- Personal profile section -->
     <div class="profile-card">
         <div class="profile-text">
+            <div class="about-label">About the author</div>
             <h2>Giovanni F. Molina Aguirre</h2>
             <div class="title">Rural Economist & Heritage Methodologist | PhD Candidate</div>
             <p>I design diagnostic tools for wine regions, geographical indications, and rural territories – bridging economic analysis, institutional diagnostics, and heritage interpretation. My current research compares wine area development in <strong>Emilia-Romagna (Italy)</strong> and <strong>Priorat (Catalonia, Spain)</strong>.</p>
@@ -338,42 +357,43 @@
                 <span class="lang-badge">🇫🇷 French</span>
             </p>
             <div class="social-links" id="contact">
-                <a href="mailto:giovanni.molina@unicas.it">📧 Email</a>
-                <a href="#">💼 LinkedIn</a>
-                <a href="#">🐦 Twitter</a>
-                <a href="#">🎓 Google Scholar</a>
+                <a href="mailto:giovannifrancisco.molinaaguirre@unicas.it">📧 Email</a>
+                <a href="https://linkedin.com/in/giovanni-molina-aguirre-89855743" target="_blank">💼 LinkedIn</a>
                 <a href="cv.pdf">📄 CV (PDF)</a>
             </div>
         </div>
         <div class="profile-image">
-            <!-- Replace with your actual photo URL -->
-            <img src="https://via.placeholder.com/140x140?text=Your+Photo" alt="Giovanni Molina">
+            <img src="photo.jpg" alt="Giovanni Molina">
         </div>
     </div>
 
-    <!-- TIVAF model explanation (main screen) -->
-    <h2 class="section-title">The TIVAF framework</h2>
+    <!-- TIVAF model teaser -->
+    <h2 class="section-title">The TIVAF framework in brief</h2>
     <p class="section-subtitle">Four pillars – a health check‑up for wine tourism regions</p>
 
     <div class="pillars-grid">
+        <!-- Pillar 1 -->
         <div class="pillar-card">
             <div class="pillar-number">01</div>
             <div class="pillar-title">Institutional thickness</div>
-            <div class="pillar-desc">Do wineries act as a team? We measure shared infrastructure (wine route signs, consortium logos), inter‑winery promotion, and collective storytelling.</div>
+            <div class="pillar-desc">Do wineries act as a team? We measure shared infrastructure, consortium logos, and inter‑winery promotion.</div>
             <div class="pillar-quote">🔍 Example: presence of DOQ/DOCG plaques, staff mentioning appellation rules.</div>
         </div>
+        <!-- Pillar 2 -->
         <div class="pillar-card">
             <div class="pillar-number">02</div>
             <div class="pillar-title">Multi‑channel price mapping</div>
-            <div class="pillar-desc">Who captures value? We compare the same wine in supermarkets (commodity baseline), specialist shops (information premium), and winery door (tourism premium).</div>
+            <div class="pillar-desc">Who captures value? Compare the same wine in supermarkets, specialist shops, and winery door.</div>
             <div class="pillar-quote">🛒 → 🍷 → 🏠 “The tourism premium reveals direct value for the winery.”</div>
         </div>
+        <!-- Pillar 3 -->
         <div class="pillar-card">
             <div class="pillar-number">03</div>
             <div class="pillar-title">Digital terroir & narrative</div>
-            <div class="pillar-desc">We score websites and social media on narrative focus, information density, engagement depth, and experiential storytelling.</div>
-            <div class="pillar-quote">📱 “Selling a story, not just a bottle – how wineries build digital identity.”</div>
+            <div class="pillar-desc">We score websites and social media on narrative focus, information density, engagement, and experiential storytelling.</div>
+            <div class="pillar-quote">📱 “Selling a story, not just a bottle.”</div>
         </div>
+        <!-- Pillar 4 -->
         <div class="pillar-card">
             <div class="pillar-number">04</div>
             <div class="pillar-title">Hedonic pricing (exploratory)</div>
@@ -382,21 +402,29 @@
         </div>
     </div>
 
-    <!-- Audience choice: rookie or expert -->
-    <div class="button-group">
-        <a href="tivaf-rookie.html" class="btn">🍇 For beginners & wine lovers</a>
-        <a href="tivaf-expert.html" class="btn btn-outline">📊 For economists & professionals</a>
+    <!-- Clear call-to-action: choose a version -->
+    <div class="version-selection">
+        <p>📌 <strong>To explore the complete framework, select your preferred guide below:</strong></p>
+        <div class="button-group">
+            <a href="tivaf-rookie.html" class="btn">🍇 Rookie Guide (non‑technical)</a>
+            <a href="tivaf-expert.html" class="btn">📊 Expert Version (economists & professionals)</a>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Both versions explain the four pillars in detail – one with simple analogies, the other with technical depth.</p>
     </div>
 
-    <!-- Brief call to action / collaboration -->
+    <div class="teaser-note">
+        💡 <strong>Why two versions?</strong> TIVAF is designed for both wine enthusiasts and researchers. Choose the path that matches your background.
+    </div>
+
+    <!-- Collaboration call -->
     <div style="background: #fef3e8; border-radius: 1.5rem; padding: 1.5rem; text-align: center; margin: 2rem 0;">
-        <p style="font-size: 1.1rem;">📢 <strong>Apply TIVAF to your region</strong> – I collaborate with wine consortia, DMOs, and researchers. <a href="mailto:giovanni.molina@unicas.it" style="color: var(--wine);">Get in touch →</a></p>
+        <p style="font-size: 1.1rem;">📢 <strong>Apply TIVAF to your region</strong> – I collaborate with wine consortia, DMOs, and researchers. <a href="mailto:giovannifrancisco.molinaaguirre@unicas.it" style="color: var(--wine);">Get in touch →</a></p>
     </div>
 </div>
 
 <div class="footer">
     <p>© 2025 Giovanni F. Molina Aguirre – University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV) – GRATET</p>
-    <p>TIVAF is an open‑access diagnostic framework. <a href="tivaf-rookie.html">Learn more</a> | <a href="tivaf-expert.html">Technical version</a></p>
+    <p>TIVAF is an open‑access diagnostic framework. <a href="tivaf-rookie.html">Rookie guide</a> | <a href="tivaf-expert.html">Expert version</a></p>
 </div>
 </body>
 </html>

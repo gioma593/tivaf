@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>TIVAF – Diagnostic toolkit for wine regions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #fefaf5;
+            color: #2c2418;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #8b2c1d 0%, #b1624b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #b1624b;
+            padding-left: 1rem;
+            color: #3a2a1f;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+            color: #5e3a2a;
+        }
+
+        .hero {
+            background: #fff7f0;
+            border-radius: 2rem;
+            padding: 2rem 2rem 2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0e2d4;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e9d9cf;
+            color: #6b3c2a;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .pillar-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #f0e2d4;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .pillar-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #d9b48b;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0 0.5rem 0;
+            color: #4a2c1c;
+        }
+
+        .pillar-desc {
+            color: #4a3e32;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .pillar-quote {
+            background: #f9f1ea;
+            padding: 0.6rem 1rem;
+            border-radius: 1rem;
+            font-style: italic;
+            font-size: 0.9rem;
+            border-left: 3px solid #b1624b;
+            margin-top: 1rem;
+        }
+
+        .compare-table {
+            background: white;
+            border-radius: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #f0e2d4;
+        }
+
+        .compare-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .compare-table th {
+            background: #f6ede6;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #3a2a1f;
+        }
+
+        .compare-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0e2d4;
+            vertical-align: top;
+        }
+
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            background: #fff2e6;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 6px solid #b1624b;
+        }
+
+        .button-outline {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #b1624b;
+            color: #b1624b;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .button-outline:hover {
+            background: #b1624b;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9dbcf;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7e6a5a;
+        }
+
+        @media (max-width: 700px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+            .container { padding: 1.2rem; }
+            .hero { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="badge">✨ diagnostic toolkit for wine regions</div>
+        <h1>TIVAF</h1>
+        <p style="font-size: 1.3rem; font-weight: 400; margin-top: 0.5rem; color: #5c4636;"><strong>Tourism‑Institutional Value Appropriation Framework</strong></p>
+        <p style="font-size: 1.1rem; margin: 1rem 0 0.5rem 0;">A practical, low‑cost diagnostic to understand if wine tourism really benefits small, family‑run wineries — especially where data is scarce.</p>
+        <div style="margin-top: 1.2rem;">
+            <a href="#how-it-works" style="margin-right: 1rem;" class="button-outline">📖 How it works →</a>
+            <a href="#pillars" class="button-outline">🔍 The four pillars</a>
+        </div>
+    </div>
+
+    <!-- THE PROBLEM (simple analogy) -->
+    <section>
+        <h2>🧭 The problem we solve</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem;">
+            <div style="flex: 1; background: #fff7f0; border-radius: 1.5rem; padding: 1.5rem;">
+                <span style="font-size: 2rem;">🍇</span>
+                <p style="margin-top: 0.5rem; font-weight: 500;">In many wine regions (especially with <strong>small family wineries</strong>):</p>
+                <ul style="margin-top: 0.8rem; padding-left: 1.3rem;">
+                    <li>📉 Official stats don’t separate tourism sales from others</li>
+                    <li>📊 Commercial databases (Orbis, etc.) <strong>miss small producers</strong></li>
+                    <li>🤝 Wineries rarely share detailed financial data</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Result:</strong> Consortiums and policymakers lack evidence to know if wine tourism creates real local value.</p>
+            </div>
+            <div style="flex: 1; background: #fff0e6; border-radius: 1.5rem; padding: 1.5rem;">
+                <span style="font-size: 2rem;">🩺</span>
+                <p style="margin-top: 0.5rem; font-weight: 500;">TIVAF = a <strong>health check‑up for a wine region</strong></p>
+                <p>Just like a doctor measures blood pressure, heart rate and temperature, TIVAF measures <strong>four vital signs</strong>. No need for perfect data — it’s built for <em>data‑poor, small‑firm environments</em>.</p>
+                <div class="pillar-quote" style="margin-top: 1rem;">“A transparent, replicable diagnostic — not a magic bullet, but a first practical step.”</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE FOUR PILLARS (CARD GRID) -->
+    <h2 id="pillars">🏛️ The four pillars · TIVAF vital signs</h2>
+    <div class="pillar-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card">
+            <div class="pillar-number">01</div>
+            <div class="pillar-title">Institutional thickness audit</div>
+            <div class="pillar-desc">Do wineries act like a team or like isolated players? We measure shared infrastructure, consortium storytelling, inter‑winery signaling and collective branding.</div>
+            <div class="pillar-quote">🔍 <strong>Example:</strong> Presence of DOQ/DOCG plaques, wine‑route signage, staff mentioning appellation rules, brochures of other local wineries.</div>
+            <div style="font-size:0.85rem; margin-top: 0.7rem;">📊 Output: <strong>Institutional Thickness Index (1–5)</strong></div>
+        </div>
+        <!-- Pillar 2 -->
+        <div class="pillar-card">
+            <div class="pillar-number">02</div>
+            <div class="pillar-title">Multi‑channel price mapping</div>
+            <div class="pillar-desc">Who captures the value? We compare the <strong>same entry‑level wine</strong> across three channels: supermarket (GDO), specialist wine shop, and direct‑to‑consumer (winery door).</div>
+            <div class="pillar-quote">🛒 → 🍷 → 🏠 <br> “Commodity baseline” → “Information premium” → “Tourism premium”</div>
+            <div style="font-size:0.85rem; margin-top: 0.7rem;">💰 Output: price gaps & channel value capture</div>
+        </div>
+        <!-- Pillar 3 -->
+        <div class="pillar-card">
+            <div class="pillar-number">03</div>
+            <div class="pillar-title">Digital terroir & narrative scoring</div>
+            <div class="pillar-desc">Do wineries sell a bottle or a story? We analyse website + social media (Instagram/Facebook) with a 4‑indicator score: narrative focus, information density, engagement depth, experiential realm.</div>
+            <div class="pillar-quote">📱 “Rich territorial storytelling vs. pure price/promotion — and how visitors interact online.”</div>
+            <div style="font-size:0.85rem; margin-top: 0.7rem;">📈 Output: <strong>Digital Identity Score (1–5)</strong></div>
+        </div>
+        <!-- Pillar 4 -->
+        <div class="pillar-card">
+            <div class="pillar-number">04</div>
+            <div class="pillar-title">Hedonic pricing under data opacity</div>
+            <div class="pillar-desc">A simple statistical model that relates price to tourism status, institutional thickness, digital identity and basic product attributes. No huge dataset needed — it’s exploratory and diagnostic.</div>
+            <div class="pillar-quote">📐 “Does tourism actually correlate with higher prices, after accounting for region and quality?”</div>
+            <div style="font-size:0.85rem; margin-top: 0.7rem;">⚙️ Output: exploratory associations, not causation — but actionable for governance.</div>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS IN PRACTICE (real example) -->
+    <h2 id="how-it-works">🌍 How TIVAF works in practice</h2>
+    <div style="background: #ffffff; border-radius: 1.5rem; padding: 1.5rem; margin: 1rem 0 1.5rem 0; border: 1px solid #f0e2d4;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+            <div style="flex: 1; min-width: 180px;">
+                <span style="font-size: 3rem;">🇮🇹🍇</span>
+                <p><strong>Pignoletto DOCG</strong><br>Colli Bolognesi, Italy</p>
+            </div>
+            <div style="flex: 1; min-width: 180px;">
+                <span style="font-size: 3rem;">🇪🇸🍷</span>
+                <p><strong>Priorat DOQ</strong><br>Catalonia, Spain</p>
+            </div>
+            <div style="flex: 2;">
+                <p><strong>20 wineries</strong> (10 per region) – half with active wine tourism, half without.<br>
+                For each winery we:</p>
+                <ul>
+                    <li>✅ Conducted <strong>in‑situ institutional observation</strong> (Pillar 1)</li>
+                    <li>✅ Recorded prices in supermarkets, specialist shops and at the winery door (Pillar 2)</li>
+                    <li>✅ Coded digital presence (website + social media) with double coder reliability (Cohen’s kappa >0.60) (Pillar 3)</li>
+                    <li>✅ Estimated a parsimonious hedonic model (Pillar 4)</li>
+                </ul>
+                <p><strong>Initial insight:</strong> Tourism‑integrated wineries tend to command higher direct‑to‑consumer prices, richer territorial narratives and stronger institutional linkages – especially in the more institutionally “thick” Priorat region.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPARISON TABLE: Traditional vs TIVAF -->
+    <h2>⚖️ Why TIVAF is different</h2>
+    <div class="compare-table">
+        <table>
+            <thead>
+                <tr><th>Conventional approach</th><th>TIVAF approach</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Requires large datasets (hundreds of wineries)</td><td>✅ Works with <strong>small samples (≈20 wineries)</strong></td></tr>
+                <tr><td>Needs detailed financial reports / firm‑level accounts</td><td>✅ Uses <strong>publicly observable prices and physical/digital signs</strong></td></tr>
+                <tr><td>Treats institutions as background context</td><td>✅ <strong>Measures institutional thickness directly</strong> with rubric</td></tr>
+                <tr><td>Ignores online storytelling & digital terroir</td><td>✅ Quantifies <strong>digital narratives and engagement</strong> (Digital Identity Score)</td></tr>
+                <tr><td>Aims for generalizable causal estimates (often infeasible for small wineries)</td><td>✅ Provides <strong>actionable diagnostics</strong> for governance and strategy</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- WHO CAN USE TIVAF -->
+    <h2>👥 Who can use TIVAF?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 1rem 0 2rem 0;">
+        <div style="background: white; border-radius: 1.2rem; padding: 1rem; text-align: center; border: 1px solid #f0e2d4;">
+            <span style="font-size: 2rem;">🍇🏛️</span>
+            <p><strong>Wine consortia</strong><br>Evaluate tourism initiatives & collective branding</p>
+        </div>
+        <div style="background: white; border-radius: 1.2rem; padding: 1rem; text-align: center; border: 1px solid #f0e2d4;">
+            <span style="font-size: 2rem;">🗺️</span>
+            <p><strong>DMOs & wine routes</strong><br>Benchmark wineries, improve destination strategy</p>
+        </div>
+        <div style="background: white; border-radius: 1.2rem; padding: 1rem; text-align: center; border: 1px solid #f0e2d4;">
+            <span style="font-size: 2rem;">🏛️📋</span>
+            <p><strong>Regional policymakers</strong><br>Justify funding for wine tourism, digital training or route signage</p>
+        </div>
+        <div style="background: white; border-radius: 1.2rem; padding: 1rem; text-align: center; border: 1px solid #f0e2d4;">
+            <span style="font-size: 2rem;">🎓🔬</span>
+            <p><strong>Researchers</strong><br>Compare value appropriation across GI territories (wine, cheese, olive oil, crafts)</p>
+        </div>
+    </div>
+
+    <!-- READY-TO-USE TOOLS (mention annexes) -->
+    <div class="highlight">
+        <span style="font-size: 1.8rem; font-weight: 600;">📂 Ready‑to‑use templates</span>
+        <p style="margin: 0.8rem 0;">TIVAF includes <strong>field‑tested observation forms, price mapping sheets, digital scoring rubrics, and a codebook</strong> with anchor descriptions. You don’t need a PhD in economics to apply it.</p>
+        <ul style="margin-left: 1.2rem;">
+            <li>Institutional‑thickness audit form (9 indicators, 1–5 Likert)</li>
+            <li>Multi‑channel price mapping form (GDO, specialist, DTC + strategic bypass coding)</li>
+            <li>Digital Identity scoring sheet (narrative focus, information density, engagement depth, experiential realm)</li>
+            <li>Inter‑rater reliability protocol (Cohen’s kappa) for robust diagnostics</li>
+        </ul>
+        <p style="margin-top: 1rem;"><strong>📄 The full TIVAF methodology paper is available upon request — with annexes ready to adapt to any wine region or GI territory.</strong></p>
+    </div>
+
+    <!-- SIMPLE TAKE-HOME MESSAGE -->
+    <div style="text-align: center; background: #fef4ec; border-radius: 2rem; padding: 2rem; margin: 2rem 0;">
+        <span style="font-size: 2.5rem;">🍾📈</span>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 1rem auto 0 auto;">“TIVAF helps small wine regions answer a simple but powerful question: <strong>When a tourist visits a winery, how much of that value stays with the local producer – and how can we measure it without expensive data?”</strong></p>
+        <p style="margin-top: 1.5rem; font-style: italic;">Transparent · Replicable · Built for family wineries and real‑world constraints.</p>
+    </div>
+
+    <!-- FREQUENTLY ASKED / LIMITATIONS (honest but reassuring) -->
+    <h2>🔎 What TIVAF does (and does not do)</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;">
+        <div style="flex: 1; background: #ffffff; border-radius: 1rem; padding: 1rem; border: 1px solid #f0e2d4;">
+            <span style="font-weight: 700;">✅ Provides diagnostic & exploratory evidence</span><br>
+            Generates hypotheses and actionable insights for governance.
+        </div>
+        <div style="flex: 1; background: #ffffff; border-radius: 1rem; padding: 1rem; border: 1px solid #f0e2d4;">
+            <span style="font-weight: 700;">✅ Works where conventional econometrics fails</span><br>
+            Ideal for small‑N, data‑poor environments (small wineries, emerging GI regions).
+        </div>
+        <div style="flex: 1; background: #ffffff; border-radius: 1rem; padding: 1rem; border: 1px solid #f0e2d4;">
+            <span style="font-weight: 700;">⚠️ Not a causal treatment‑effect estimator</span><br>
+            Results are correlations within an analytic narrative — but strong enough to inform policy.
+        </div>
+    </div>
+
+    <!-- CALL TO ACTION / CONTACT (researcher info) -->
+    <div class="footer">
+        <p><strong>TIVAF · Tourism‑Institutional Value Appropriation Framework</strong><br>
+        Developed by Giovanni F. Molina Aguirre<br>
+        PhD candidate in Economics (rural development) · UNICAS (Italy) & URV – GRATET (Spain)<br>
+        📧 <a href="mailto:giovanni.molina@unicas.it" style="color:#b1624b;">giovanni.molina@unicas.it</a> &nbsp;|&nbsp; 
+        🌐 Research on wine regions, GIs and heritage-led development</p>
+        <p style="margin-top: 1rem;">📖 Interested in applying TIVAF to your region? <a href="#" style="color:#b1624b;">Get in touch →</a> (collaborations, workshops, or method licensing for consortia)</p>
+        <p style="margin-top: 1.5rem; font-size: 0.75rem;">CC BY‑NC 4.0 · TIVAF is an open‑access diagnostic framework. The full methodological paper and annexes are available upon request.</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIVAF – Expert version | Methodological framework for wine economics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #faf8f5;
+            color: #1e1a16;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.2rem;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 2.2rem;
+            border-bottom: 3px solid #9b4b3a;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+            margin: 1.8rem 0 1rem 0;
+            color: #5c3a2a;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.5rem;
+            color: #7a4a38;
+        }
+        .pillar {
+            background: #fef9f2;
+            border-left: 5px solid #9b4b3a;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0.8rem;
+        }
+        .equation {
+            background: #f0ede8;
+            font-family: monospace;
+            padding: 1rem;
+            border-radius: 0.6rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.6rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #e9ddd2;
+        }
+        .nav {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: #9b4b3a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.2rem; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="nav">
+        <a href="index.html">← Home</a>
+        <a href="tivaf-rookie.html">Rookie version (didactic)</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <h1>TIVAF – Technical framework</h1>
+    <p><strong>Tourism‑Institutional Value Appropriation Framework</strong><br>
+    A mixed‑methods diagnostic for value capture in data‑poor, small‑firm wine regions and GI territories.</p>
+
+    <h2>1. Problem statement</h2>
+    <p>Commercial databases (e.g., Orbis) systematically under‑represent small wineries. Official statistics rarely distinguish tourism from non‑tourism sales. Conventional hedonic pricing models require large cross‑sections unavailable in many appellations. <strong>TIVAF addresses this gap</strong> by providing an operational, replicable diagnostic that works with small, stratified samples (N ≈ 20).</p>
+
+    <h2>2. Theoretical grounding</h2>
+    <p>TIVAF integrates three literatures:</p>
+    <ul>
+        <li><strong>New Institutional Economics</strong> – institutions as rulebooks (consortia, appellation rules, transaction costs).</li>
+        <li><strong>Place‑based development</strong> – institutional thickness, social capital, collective learning.</li>
+        <li><strong>Hedonic price theory</strong> – extended to include tourism status, digital narratives, and institutional indices.</li>
+    </ul>
+    <p>The framework embeds econometric exploration within an <strong>analytic narrative</strong> of regional institutional evolution (Bates et al., 1998).</p>
+
+    <h2>3. Four pillars (operationalization)</h2>
+
+    <div class="pillar">
+        <h3>Pillar 1 – Institutional‑thickness audit</h3>
+        <p>Likert‑type rubric (1–5) across three domains: (i) network integration (shared infrastructure, storytelling, inter‑organizational signaling); (ii) symbolic capital (territorial branding, experiential realm, heritage materiality); (iii) transaction‑cost indicators (information accessibility, service efficiency, DTC logistics).</p>
+        <p><strong>Output:</strong> Winery‑level Institutional Thickness Index (median of 9 items). Inter‑rater reliability: weighted Cohen's κ > 0.60.</p>
+    </div>
+
+    <div class="pillar">
+        <h3>Pillar 2 – Multi‑channel price mapping</h3>
+        <p>Records price of a representative entry‑level wine (same label, 0.75L, base tier) across three channels: GDO/supermarket, specialist wine shop, winery door (DTC). Absence coded as “strategic retail bypass”.</p>
+        <p><strong>Derived indicators:</strong> Information Premium = (P<sub>specialist</sub> – P<sub>GDO</sub>)/P<sub>GDO</sub>; Tourism Premium = (P<sub>DTC</sub> – P<sub>GDO</sub>)/P<sub>GDO</sub>.</p>
+    </div>
+
+    <div class="pillar">
+        <h3>Pillar 3 – Digital terroir & narrative scoring</h3>
+        <p>Content analysis of website + social media (12‑month window). Four indicators (1–5): narrative focus (territory vs. product), information density (technical sheets, maps, booking), engagement depth (comments+saves/likes), experiential realm (sensory storytelling vs. aesthetic imagery).</p>
+        <p><strong>Output:</strong> Composite Digital Identity Score (average of four, rescaled 1–5).</p>
+    </div>
+
+    <div class="pillar">
+        <h3>Pillar 4 – Hedonic pricing under data opacity</h3>
+        <p>Log‑linear OLS model with heteroskedasticity‑robust standard errors:</p>
+        <div class="equation">
+            ln(P<sub>ic</sub>) = α + β<sub>1</sub> Tourism<sub>i</sub> + β<sub>2</sub> Digital<sub>i</sub> + β<sub>3</sub> Thickness<sub>i</sub> + γ' Attributes<sub>i</sub> + δ Region<sub>i</sub> + ε<sub>ic</sub>
+        </div>
+        <p>Where <em>Tourism</em> is a binary (structured tourism offer), <em>Digital</em> and <em>Thickness</em> are indices from Pillars 3 & 1, <em>Attributes</em> includes organic certification and appellation sub‑category, and <em>Region</em> captures Pignoletto vs. Priorat.</p>
+        <p><strong>Robustness:</strong> Variance inflation factors, leave‑one‑out sensitivity, separate models by channel.</p>
+        <p><em>Interpretation:</em> Exploratory associations, not causal. Coefficients approximate percentage differences in price.</p>
+    </div>
+
+    <h2>4. Case selection & sampling</h2>
+    <p>Contrastive case design: <strong>Pignoletto DOCG</strong> (Colli Bolognesi, Italy) and <strong>Priorat DOQ</strong> (Catalonia, Spain). Stratified sample of 20 wineries (10 per region; 5 tourism‑integrated, 5 non‑tourism). Sampling based on producer mappings and fieldwork residencies. Small‑N design appropriate given under‑representation of small wineries in commercial data.</p>
+
+    <h2>5. Replicability & output</h2>
+    <p>TIVAF includes a <strong>codebook, observation forms, price mapping sheets, digital scoring rubrics, and inter‑rater reliability protocol</strong>. It generates:</p>
+    <ul>
+        <li>Winery‑level indices (institutional thickness, digital identity).</li>
+        <li>Channel price gaps (information premium, tourism premium).</li>
+        <li>Exploratory hedonic estimates for governance diagnostics.</li>
+    </ul>
+
+    <h2>6. Limitations</h2>
+    <ul>
+        <li>Not a causal treatment‑effect estimator.</li>
+        <li>Small N limits generalizability.</li>
+        <li>Omits vintage and critic scores (mitigated by focusing on entry‑level wines).</li>
+        <li>Requires field access and two coders for reliability.</li>
+    </ul>
+
+    <h2>7. Citation & contact</h2>
+    <p><strong>To cite TIVAF:</strong> Molina Aguirre, G.F. (2025). Tourism‑Institutional Value Appropriation Framework (TIVAF): A mixed‑methods diagnostic for small wine regions. Working paper, UNICAS/URV.</p>
+    <div id="contact" style="background: #f5f0ea; padding: 1rem; border-radius: 0.8rem; margin: 1.5rem 0;">
+        <p><strong>Giovanni F. Molina Aguirre</strong><br>
+        PhD candidate in Economics (rural development)<br>
+        University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV) – GRATET<br>
+        📧 giovanni.molina@unicas.it<br>
+        🔗 <a href="#">LinkedIn</a> | <a href="#">Twitter/X</a> | <a href="#">Google Scholar</a> | <a href="cv.pdf">Download CV (PDF)</a></p>
+    </div>
+
+    <div class="footer">
+        TIVAF © 2025 – Licensed under CC BY-NC 4.0. Full methodological paper and annexes available upon request.
+    </div>
+</div>
+</body>
+</html>

@@ -17,32 +17,21 @@
             --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
             --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: var(--font-sans);
             background: var(--cream);
             color: var(--earth);
             line-height: 1.5;
         }
-
-        /* Hero section with watermark background */
         .hero {
-            position: relative;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('header.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('header.jpg');
             background-size: cover;
             background-position: center 30%;
             padding: 4rem 1.5rem;
             text-align: center;
             color: white;
         }
-
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -51,14 +40,12 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
             margin-bottom: 0.5rem;
         }
-
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 1rem auto 0;
             opacity: 0.95;
         }
-
         .hero-badge {
             display: inline-block;
             background: var(--wine);
@@ -70,8 +57,6 @@
             margin-bottom: 1rem;
             letter-spacing: 1px;
         }
-
-        /* Navigation bar */
         .nav-bar {
             background: white;
             border-bottom: 1px solid #e0d4c8;
@@ -84,26 +69,18 @@
             top: 0;
             z-index: 100;
         }
-
         .nav-bar a {
             color: var(--wine);
             text-decoration: none;
             font-weight: 500;
             transition: 0.2s;
         }
-
-        .nav-bar a:hover {
-            color: var(--olive);
-        }
-
-        /* Main container */
+        .nav-bar a:hover { color: var(--olive); }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
-
-        /* Personal info card (moved to bottom) */
         .profile-card {
             background: white;
             border-radius: 1.5rem;
@@ -117,11 +94,7 @@
             gap: 2rem;
             align-items: center;
         }
-
-        .profile-text {
-            flex: 2;
-        }
-
+        .profile-text { flex: 2; }
         .about-label {
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -129,14 +102,12 @@
             color: var(--wine-light);
             margin-bottom: 0.3rem;
         }
-
         .profile-text h2 {
             font-size: 1.8rem;
             font-family: var(--font-serif);
             color: var(--wine);
             margin-bottom: 0.5rem;
         }
-
         .profile-text .title {
             font-size: 1.1rem;
             font-weight: 500;
@@ -145,11 +116,7 @@
             border-left: 3px solid var(--wine-light);
             padding-left: 0.8rem;
         }
-
-        .profile-text p {
-            margin-bottom: 0.8rem;
-        }
-
+        .profile-text p { margin-bottom: 0.8rem; }
         .lang-badge {
             display: inline-block;
             background: #f0e2d4;
@@ -159,23 +126,17 @@
             margin-right: 0.4rem;
             margin-bottom: 0.4rem;
         }
-
-        .social-links {
-            margin-top: 1rem;
-        }
-
+        .social-links { margin-top: 1rem; }
         .social-links a {
             color: var(--wine);
             text-decoration: none;
             margin-right: 1.2rem;
             font-size: 0.9rem;
         }
-
         .profile-image {
             flex: 0 0 150px;
             text-align: center;
         }
-
         .profile-image img {
             width: 140px;
             height: 140px;
@@ -184,8 +145,6 @@
             border: 3px solid var(--wine-light);
             background: #ddd;
         }
-
-        /* Section headings */
         .section-title {
             font-size: 2rem;
             font-family: var(--font-serif);
@@ -194,22 +153,18 @@
             border-left: 5px solid var(--wine-light);
             padding-left: 1rem;
         }
-
         .section-subtitle {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 2rem auto;
             color: #5c4a3a;
         }
-
-        /* Pillars grid - 2 columns for desktop, 1 for mobile */
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.8rem;
             margin: 2rem 0;
         }
-
         .pillar-card {
             background: white;
             border-radius: 1.2rem;
@@ -218,31 +173,26 @@
             transition: transform 0.2s, box-shadow 0.2s;
             border-top: 4px solid var(--wine-light);
         }
-
         .pillar-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
-
         .pillar-number {
             font-size: 2rem;
             font-weight: 800;
             color: #d9b48b;
             margin-bottom: 0.5rem;
         }
-
         .pillar-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin: 0.5rem 0;
             color: var(--wine);
         }
-
         .pillar-desc {
             color: #4a3e32;
             font-size: 0.95rem;
         }
-
         .pillar-quote {
             background: #fef3e8;
             padding: 0.6rem;
@@ -252,8 +202,6 @@
             font-size: 0.85rem;
             border-left: 3px solid var(--wine-light);
         }
-
-        /* Version selection buttons */
         .version-selection {
             text-align: center;
             margin: 2.5rem 0 1rem;
@@ -287,7 +235,6 @@
             background: var(--olive);
             transform: translateY(-2px);
         }
-
         .teaser-note {
             text-align: center;
             background: #fef3e8;
@@ -296,8 +243,6 @@
             margin: 1rem 0 2rem;
             font-style: italic;
         }
-
-        /* Footer */
         .footer {
             background: #2c2418;
             color: #d9cfc0;
@@ -306,36 +251,27 @@
             margin-top: 3rem;
             font-size: 0.85rem;
         }
-
-        .footer a {
-            color: #d9b48b;
-            text-decoration: none;
-        }
-
+        .footer a { color: #d9b48b; text-decoration: none; }
         @media (max-width: 700px) {
             .hero h1 { font-size: 2rem; }
             .profile-card { flex-direction: column; text-align: center; }
             .profile-text .title { text-align: left; }
             .section-title { font-size: 1.6rem; }
             .btn { min-width: 160px; padding: 0.6rem 1.2rem; }
-            .pillars-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
+            .pillars-grid { grid-template-columns: 1fr; gap: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation bar -->
 <div class="nav-bar">
-    <a href="#">Home</a>
+    <a href="index.html">🏠 Home</a>
     <a href="tivaf-rookie.html">📖 Rookie Guide</a>
     <a href="tivaf-expert.html">📊 Expert Version</a>
+    <a href="for-stakeholders.html">💼 For Stakeholders</a>
     <a href="#contact">Contact</a>
 </div>
 
-<!-- Hero header -->
 <div class="hero">
     <div class="hero-badge">Tourism‑Institutional Value Appropriation Framework</div>
     <h1>TIVAF</h1>
@@ -343,7 +279,6 @@
 </div>
 
 <div class="container">
-    <!-- TIVAF model teaser (main content first) -->
     <h2 class="section-title">The TIVAF framework in brief</h2>
     <p class="section-subtitle">Four pillars – a health check‑up for wine tourism regions</p>
 
@@ -374,7 +309,6 @@
         </div>
     </div>
 
-    <!-- Version selection -->
     <div class="version-selection">
         <p>📌 <strong>To explore the complete framework, select your preferred guide below:</strong></p>
         <div class="button-group">
@@ -388,12 +322,15 @@
         💡 <strong>Why two versions?</strong> TIVAF is designed for both wine enthusiasts and researchers. Choose the path that matches your background.
     </div>
 
-    <!-- Collaboration call (still before author info) -->
     <div style="background: #fef3e8; border-radius: 1.5rem; padding: 1.5rem; text-align: center; margin: 2rem 0;">
         <p style="font-size: 1.1rem;">📢 <strong>Apply TIVAF to your region</strong> – I collaborate with wine consortia, DMOs, and researchers. <a href="mailto:giovannifrancisco.molinaaguirre@unicas.it" style="color: var(--wine);">Get in touch →</a></p>
     </div>
 
-    <!-- Profile card moved to the bottom (right before footer) -->
+    <!-- Replicability note (olive oil, cheese, etc.) -->
+    <div style="background: #e9ddd2; border-radius: 1rem; padding: 1rem; text-align: center; margin: 1rem 0;">
+        <p>🌍 <strong>Beyond wine</strong> – TIVAF is designed to be replicable for <strong>olive oil, cheese, crafts, and any geographical indication (GI) product</strong> where small producers and data scarcity are common. The framework adapts to any heritage‑based rural value chain.</p>
+    </div>
+
     <div class="profile-card" id="contact">
         <div class="profile-text">
             <div class="about-label">About the author</div>
@@ -420,8 +357,8 @@
 </div>
 
 <div class="footer">
-    <p>© 2025 Giovanni F. Molina Aguirre – University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV)</p>
-    <p>TIVAF is an open‑access diagnostic framework. <a href="tivaf-rookie.html">Rookie guide</a> | <a href="tivaf-expert.html">Expert version</a></p>
+    <p>© 2025 Giovanni F. Molina Aguirre – University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV) – GRATET</p>
+    <p>TIVAF is an open‑access diagnostic framework. <a href="tivaf-rookie.html">Rookie guide</a> | <a href="tivaf-expert.html">Expert version</a> | <a href="for-stakeholders.html">For stakeholders</a></p>
 </div>
 </body>
 </html>

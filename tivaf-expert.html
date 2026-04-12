@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIVAF – Expert version | Methodological framework for wine economics</title>
     <style>
-        /* Same CSS variables */
         :root {
             --wine: #8b2c1d;
             --wine-light: #b1624b;
@@ -80,11 +79,13 @@
         }
         .equation {
             background: #f0ede8;
-            font-family: monospace;
-            padding: 0.8rem;
+            font-family: 'Courier New', monospace;
+            padding: 1rem;
             border-radius: 0.6rem;
             margin: 1rem 0;
             overflow-x: auto;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         table {
             width: 100%;
@@ -109,7 +110,10 @@
             font-size: 0.85rem;
             margin-top: 2rem;
         }
-        .footer a { color: #d9b48b; text-decoration: none; }
+        .footer a {
+            color: #d9b48b;
+            text-decoration: none;
+        }
         @media (max-width: 700px) {
             .sub-hero h1 { font-size: 1.6rem; }
             h2 { font-size: 1.4rem; }
@@ -151,10 +155,12 @@
     </div>
     <div class="pillar">
         <h3>Pillar 4 – Hedonic pricing under data opacity</h3>
+        <p>The framework uses a log‑linear hedonic model (Equation 1 from the original TIVAF paper):</p>
         <div class="equation">
             ln(P<sub>ic</sub>) = α + β<sub>1</sub> Tourism<sub>i</sub> + β<sub>2</sub> Digital<sub>i</sub> + β<sub>3</sub> Thickness<sub>i</sub> + γ' Attributes<sub>i</sub> + δ Region<sub>i</sub> + ε<sub>ic</sub>
         </div>
-        <p>OLS with robust SEs, nested specifications, leave‑one‑out sensitivity. Interpreted as exploratory associations (not causal).</p>
+        <p>Where <em>Tourism</em> is a binary indicator (structured tourism offer), <em>Digital</em> and <em>Thickness</em> are indices from Pillars 3 and 1, <em>Attributes</em> includes organic certification and appellation sub‑category, and <em>Region</em> captures baseline differences between Pignoletto DOCG and Priorat DOQ.</p>
+        <p><strong>Estimation:</strong> OLS with heteroskedasticity‑robust standard errors, nested specifications, leave‑one‑out sensitivity. <strong>Interpretation:</strong> Exploratory associations (not causal); coefficients approximate percentage differences in price.</p>
     </div>
 
     <h2>4. Case selection & sampling</h2>
@@ -170,9 +176,9 @@
         <li>Omits vintage and critic scores (mitigated by focusing on entry‑level wines).</li>
     </ul>
 
-    <h2>7. Citation & contact</h2>
+    <h2 id="contact">7. Citation & contact</h2>
     <p><strong>To cite TIVAF:</strong> Molina Aguirre, G.F. (2025). Tourism‑Institutional Value Appropriation Framework (TIVAF): A mixed‑methods diagnostic for small wine regions. Working paper, UNICAS/URV.</p>
-    <p>📧 giovanni.molina@unicas.it &nbsp;|&nbsp; <a href="index.html">Back to main page</a></p>
+    <p>📧 <strong>giovannifrancisco.molinaaguirre@unicas.it</strong> &nbsp;|&nbsp; <a href="index.html">Back to main page</a></p>
 </div>
 
 <div class="footer">

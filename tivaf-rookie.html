@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIVAF – Rookie guide | Wine tourism toolkit explained simply</title>
     <style>
-        /* Same CSS variables as main index */
         :root {
             --wine: #8b2c1d;
             --wine-light: #b1624b;
             --olive: #5a6e4a;
-            --sand: #f5ede4;
             --earth: #3a2a1f;
             --cream: #fefaf5;
             --font-serif: 'Georgia', 'Times New Roman', serif;
             --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -25,7 +22,6 @@
             color: var(--earth);
             line-height: 1.5;
         }
-        /* Navigation bar (same as index) */
         .nav-bar {
             background: white;
             border-bottom: 1px solid #e0d4c8;
@@ -42,10 +38,8 @@
             color: var(--wine);
             text-decoration: none;
             font-weight: 500;
-            transition: 0.2s;
         }
         .nav-bar a:hover { color: var(--olive); }
-        /* Hero subpage (smaller, no image but same color) */
         .sub-hero {
             background: linear-gradient(135deg, var(--wine) 0%, var(--wine-light) 100%);
             padding: 2rem 1.5rem;
@@ -55,10 +49,6 @@
         .sub-hero h1 {
             font-size: 2.2rem;
             font-family: var(--font-serif);
-        }
-        .sub-hero p {
-            max-width: 700px;
-            margin: 0.5rem auto 0;
         }
         .container {
             max-width: 1000px;
@@ -73,14 +63,10 @@
             border-left: 5px solid var(--wine-light);
             padding-left: 1rem;
         }
-        h3 {
-            font-size: 1.3rem;
-            margin: 1.2rem 0 0.5rem;
-            color: var(--wine);
-        }
+        /* 2x2 grid, centered */
         .pillar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
@@ -117,7 +103,6 @@
             border-radius: 40px;
             text-decoration: none;
             font-weight: 500;
-            margin-top: 0.5rem;
         }
         .footer {
             background: #2c2418;
@@ -131,6 +116,10 @@
         @media (max-width: 700px) {
             .sub-hero h1 { font-size: 1.6rem; }
             h2 { font-size: 1.4rem; }
+            .pillar-grid {
+                grid-template-columns: 1fr; /* stack on mobile */
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -139,6 +128,7 @@
 <div class="nav-bar">
     <a href="index.html">🏠 Home</a>
     <a href="tivaf-expert.html">📊 Expert Version</a>
+    <a href="for-stakeholders.html">💼 For Stakeholders</a>
     <a href="#contact">Contact</a>
 </div>
 
@@ -183,14 +173,19 @@
     <h2>🌍 Real example: Italy vs Spain</h2>
     <p>We tested TIVAF in Pignoletto DOCG (Italy) and Priorat DOQ (Spain) with 20 wineries. The result? Wineries with strong teamwork and rich digital stories tended to charge higher prices at their cellar door – especially in Priorat, where the consortium is very active.</p>
 
-    <div class="highlight">
-        <p><strong>🍾 The bottom line:</strong> TIVAF helps small wine regions answer: <em>“When a tourist visits, how much value stays with the local family?”</em></p>
+    <!-- Replicability note (not just wine) -->
+    <div style="background: #f0e2d4; border-radius: 1rem; padding: 0.8rem; text-align: center; margin-top: 1.5rem;">
+        🌍 <strong>Not just wine.</strong> TIVAF can be used for olive oil, cheese, crafts – any product rooted in territory and tradition.
+    </div>
+
+    <!-- Back to main page button (no extra bottom line) -->
+    <div style="text-align: center; margin-top: 2rem;">
         <a href="index.html" class="button">← Back to main page</a>
     </div>
 </div>
 
 <div class="footer">
-    <p>© 2025 Giovanni F. Molina Aguirre – TIVAF open‑access framework. <a href="index.html">Home</a> | <a href="tivaf-expert.html">Expert version</a></p>
+    <p>© 2025 Giovanni F. Molina Aguirre – TIVAF open‑access framework. <a href="index.html">Home</a> | <a href="tivaf-expert.html">Expert version</a> | <a href="for-stakeholders.html">For stakeholders</a></p>
 </div>
 </body>
 </html>

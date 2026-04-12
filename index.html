@@ -3,132 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovanni F. Molina Aguirre | Rural Economist & Heritage Methodologist</title>
+    <title>Giovanni F. Molina Aguirre | TIVAF – Wine Tourism Value Framework</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* -----------------------------------------------
+           VARIABLES (change colors, fonts, spacing here)
+        ----------------------------------------------- */
+        :root {
+            --wine: #8b2c1d;
+            --wine-light: #b1624b;
+            --olive: #5a6e4a;
+            --sand: #f5ede4;
+            --earth: #3a2a1f;
+            --cream: #fefaf5;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background: #fefaf5;
-            color: #2c2418;
+            font-family: var(--font-sans);
+            background: var(--cream);
+            color: var(--earth);
             line-height: 1.5;
-            padding: 2rem 1rem;
         }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-        }
-        h1 {
-            font-size: 2.2rem;
-            color: #8b2c1d;
-        }
-        .subhead {
-            font-size: 1.2rem;
-            color: #5c4636;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #f0e2d4;
-            padding-bottom: 1rem;
-        }
-        .section {
-            margin: 1.8rem 0;
-        }
-        .section h2 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: #5e3a2a;
-            border-left: 4px solid #b1624b;
-            padding-left: 0.8rem;
-        }
-        .button-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .button {
-            background: #b1624b;
+
+        /* Hero section with terroir background */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1506377245367-ffa4f63e7a8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            padding: 4rem 1.5rem;
+            text-align: center;
             color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: var(--font-serif);
+            letter-spacing: -0.01em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            opacity: 0.95;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--wine);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation bar */
+        .nav-bar {
+            background: white;
+            border-bottom: 1px solid #e0d4c8;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-bar a {
+            color: var(--wine);
             text-decoration: none;
             font-weight: 500;
             transition: 0.2s;
         }
-        .button-outline {
-            background: transparent;
-            border: 2px solid #b1624b;
-            color: #b1624b;
+
+        .nav-bar a:hover {
+            color: var(--olive);
         }
-        .button-outline:hover {
-            background: #b1624b;
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Personal info card (about the researcher) */
+        .profile-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #f0e2d4;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-text {
+            flex: 2;
+        }
+
+        .profile-text h2 {
+            font-size: 1.8rem;
+            font-family: var(--font-serif);
+            color: var(--wine);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-text .title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--olive);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--wine-light);
+            padding-left: 0.8rem;
+        }
+
+        .profile-text p {
+            margin-bottom: 0.8rem;
+        }
+
+        .lang-badge {
+            display: inline-block;
+            background: #f0e2d4;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--wine);
+            text-decoration: none;
+            margin-right: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .profile-image {
+            flex: 0 0 150px;
+            text-align: center;
+        }
+
+        .profile-image img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--wine-light);
+            background: #ddd;
+        }
+
+        /* Section headings */
+        .section-title {
+            font-size: 2rem;
+            font-family: var(--font-serif);
+            color: var(--wine);
+            margin: 2rem 0 1rem 0;
+            border-left: 5px solid var(--wine-light);
+            padding-left: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #5c4a3a;
+        }
+
+        /* Four pillars grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .pillar-card {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid var(--wine-light);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pillar-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d9b48b;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: var(--wine);
+        }
+
+        .pillar-desc {
+            color: #4a3e32;
+            font-size: 0.95rem;
+        }
+
+        .pillar-quote {
+            background: #fef3e8;
+            padding: 0.6rem;
+            border-radius: 0.8rem;
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--wine-light);
+        }
+
+        /* Buttons for rookie/expert versions */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--wine);
+            color: white;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--wine);
+            color: var(--wine);
+        }
+
+        .btn-outline:hover {
+            background: var(--wine);
             color: white;
         }
-        .button:hover {
-            background: #8b3c2a;
+
+        .btn:hover {
+            background: var(--olive);
+            transform: translateY(-2px);
         }
-        .social-links a {
-            margin-right: 1.2rem;
-            color: #5e3a2a;
+
+        /* Footer */
+        .footer {
+            background: #2c2418;
+            color: #d9cfc0;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #d9b48b;
             text-decoration: none;
         }
-        .footer {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #7e6a5a;
-            border-top: 1px solid #f0e2d4;
-        }
+
         @media (max-width: 700px) {
-            .container { padding: 1.2rem; }
-            h1 { font-size: 1.6rem; }
+            .hero h1 { font-size: 2rem; }
+            .profile-card { flex-direction: column; text-align: center; }
+            .profile-text .title { text-align: left; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
+
+<!-- Navigation bar -->
+<div class="nav-bar">
+    <a href="#">Home</a>
+    <a href="tivaf-rookie.html">📖 Rookie Guide</a>
+    <a href="tivaf-expert.html">📊 Expert Version</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- Hero header with wine terroir background -->
+<div class="hero">
+    <div class="hero-badge">Tourism‑Institutional Value Appropriation Framework</div>
+    <h1>TIVAF</h1>
+    <p>A diagnostic toolkit to measure how wine tourism creates value for small family wineries – even when data is scarce.</p>
+</div>
+
 <div class="container">
-    <h1>Giovanni F. Molina Aguirre</h1>
-    <div class="subhead">Rural Economist & Heritage Methodologist | PhD Candidate | Creator of TIVAF</div>
-
-    <div class="section">
-        <p>I design diagnostic tools to help wine regions, geographical indications, and rural territories measure how tourism, institutions, and digital storytelling translate into economic value – especially where data is scarce and small family producers dominate.</p>
-        <p><strong>Current:</strong> PhD candidate in Economics (rural development) at UNICAS (Italy) & research affiliate at URV – GRATET (Spain).<br>
-        <strong>Languages:</strong> English, Spanish, Portuguese, Italian, French (academic publication proficiency).<br>
-        <strong>Global experience:</strong> Research and collaborations across Europe, North America, South America, and Central Europe.</p>
-    </div>
-
-    <div class="section">
-        <h2>📄 TIVAF – My methodological framework</h2>
-        <p>The <strong>Tourism‑Institutional Value Appropriation Framework</strong> is a mixed‑methods diagnostic for small wine regions and GI territories. Choose the version that fits your background:</p>
-        <div class="button-group">
-            <a href="tivaf-rookie.html" class="button">🍇 For beginners / non‑experts</a>
-            <a href="tivaf-expert.html" class="button button-outline">📊 For economists & professionals</a>
+    <!-- Personal profile section (like an "about me" card) -->
+    <div class="profile-card">
+        <div class="profile-text">
+            <h2>Giovanni F. Molina Aguirre</h2>
+            <div class="title">Rural Economist & Heritage Methodologist | PhD Candidate</div>
+            <p>I design diagnostic tools for wine regions, geographical indications, and rural territories – bridging economic analysis, institutional diagnostics, and heritage interpretation. My current research compares wine area development in <strong>Emilia-Romagna (Italy)</strong> and <strong>Priorat (Catalonia, Spain)</strong>.</p>
+            <p><strong>Languages:</strong> 
+                <span class="lang-badge">🇬🇧 English</span>
+                <span class="lang-badge">🇪🇸 Spanish</span>
+                <span class="lang-badge">🇵🇹 Portuguese</span>
+                <span class="lang-badge">🇮🇹 Italian</span>
+                <span class="lang-badge">🇫🇷 French</span>
+            </p>
+            <div class="social-links" id="contact">
+                <a href="mailto:giovanni.molina@unicas.it">📧 Email</a>
+                <a href="#">💼 LinkedIn</a>
+                <a href="#">🐦 Twitter</a>
+                <a href="#">🎓 Google Scholar</a>
+                <a href="cv.pdf">📄 CV (PDF)</a>
+            </div>
+        </div>
+        <div class="profile-image">
+            <!-- Replace with your actual photo URL -->
+            <img src="https://via.placeholder.com/140x140?text=Your+Photo" alt="Giovanni Molina">
         </div>
     </div>
 
-    <div class="section">
-        <h2>👤 About me</h2>
-        <p>I hold an M.A. in Heritage and Territories, an M.A. in European Territories Development and Identity, a Specialization in Cultural Management, a Licentiate in History, and a B.A. in History. This interdisciplinary background allows me to bridge economic analysis, institutional diagnostics, and heritage interpretation.</p>
-        <p>Beyond academia, I consult on European identity and rural economic development, and I am an active member of ICOM (International Committee of Museums).</p>
-    </div>
+    <!-- TIVAF model explanation (main screen) -->
+    <h2 class="section-title">The TIVAF framework</h2>
+    <p class="section-subtitle">Four pillars – a health check‑up for wine tourism regions</p>
 
-    <div class="section">
-        <h2>🔗 Connect & resources</h2>
-        <div class="social-links">
-            <a href="#">📧 giovanni.molina@unicas.it</a>
-            <a href="#">💼 LinkedIn</a>
-            <a href="#">🐦 Twitter / X</a>
-            <a href="#">🎓 Google Scholar</a>
-            <a href="#">📄 Download CV (PDF)</a>
+    <div class="pillars-grid">
+        <div class="pillar-card">
+            <div class="pillar-number">01</div>
+            <div class="pillar-title">Institutional thickness</div>
+            <div class="pillar-desc">Do wineries act as a team? We measure shared infrastructure (wine route signs, consortium logos), inter‑winery promotion, and collective storytelling.</div>
+            <div class="pillar-quote">🔍 Example: presence of DOQ/DOCG plaques, staff mentioning appellation rules.</div>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-number">02</div>
+            <div class="pillar-title">Multi‑channel price mapping</div>
+            <div class="pillar-desc">Who captures value? We compare the same wine in supermarkets (commodity baseline), specialist shops (information premium), and winery door (tourism premium).</div>
+            <div class="pillar-quote">🛒 → 🍷 → 🏠 “The tourism premium reveals direct value for the winery.”</div>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-number">03</div>
+            <div class="pillar-title">Digital terroir & narrative</div>
+            <div class="pillar-desc">We score websites and social media on narrative focus, information density, engagement depth, and experiential storytelling.</div>
+            <div class="pillar-quote">📱 “Selling a story, not just a bottle – how wineries build digital identity.”</div>
+        </div>
+        <div class="pillar-card">
+            <div class="pillar-number">04</div>
+            <div class="pillar-title">Hedonic pricing (exploratory)</div>
+            <div class="pillar-desc">A simple statistical model linking price to tourism, institutional thickness, and digital narratives – designed for small samples (N≈20).</div>
+            <div class="pillar-quote">📐 “Not causal, but diagnostic: patterns that inform governance.”</div>
         </div>
     </div>
 
-    <div class="footer">
-        © 2025 Giovanni F. Molina Aguirre – Based in Bologna, Italy / Tarragona, Spain
+    <!-- Audience choice: rookie or expert -->
+    <div class="button-group">
+        <a href="tivaf-rookie.html" class="btn">🍇 For beginners & wine lovers</a>
+        <a href="tivaf-expert.html" class="btn btn-outline">📊 For economists & professionals</a>
     </div>
+
+    <!-- Brief call to action / collaboration -->
+    <div style="background: #fef3e8; border-radius: 1.5rem; padding: 1.5rem; text-align: center; margin: 2rem 0;">
+        <p style="font-size: 1.1rem;">📢 <strong>Apply TIVAF to your region</strong> – I collaborate with wine consortia, DMOs, and researchers. <a href="mailto:giovanni.molina@unicas.it" style="color: var(--wine);">Get in touch →</a></p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2025 Giovanni F. Molina Aguirre – University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV) – GRATET</p>
+    <p>TIVAF is an open‑access diagnostic framework. <a href="tivaf-rookie.html">Learn more</a> | <a href="tivaf-expert.html">Technical version</a></p>
 </div>
 </body>
 </html>

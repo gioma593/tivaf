@@ -31,7 +31,7 @@
             line-height: 1.5;
         }
 
-        /* Hero section with watermark background (50% opacity effect) */
+        /* Hero section with watermark background */
         .hero {
             position: relative;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
@@ -103,12 +103,13 @@
             padding: 2rem 1.5rem;
         }
 
-        /* Personal info card */
+        /* Personal info card (moved to bottom) */
         .profile-card {
             background: white;
             border-radius: 1.5rem;
             padding: 2rem;
-            margin-bottom: 2.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
             box-shadow: var(--shadow-sm);
             border: 1px solid #f0e2d4;
             display: flex;
@@ -318,7 +319,7 @@
             .section-title { font-size: 1.6rem; }
             .btn { min-width: 160px; padding: 0.6rem 1.2rem; }
             .pillars-grid {
-                grid-template-columns: 1fr; /* stack on mobile */
+                grid-template-columns: 1fr;
                 gap: 1.2rem;
             }
         }
@@ -334,7 +335,7 @@
     <a href="#contact">Contact</a>
 </div>
 
-<!-- Hero header with header.jpg as 50% watermark -->
+<!-- Hero header -->
 <div class="hero">
     <div class="hero-badge">Tourism‑Institutional Value Appropriation Framework</div>
     <h1>TIVAF</h1>
@@ -342,58 +343,29 @@
 </div>
 
 <div class="container">
-    <!-- Personal profile section -->
-    <div class="profile-card">
-        <div class="profile-text">
-            <div class="about-label">About the author</div>
-            <h2>Giovanni F. Molina Aguirre</h2>
-            <div class="title">Rural Economist & Heritage Methodologist | PhD Candidate</div>
-            <p>I design diagnostic tools for wine regions, geographical indications, and rural territories – bridging economic analysis, institutional diagnostics, and heritage interpretation. My current research compares wine area development in <strong>Emilia-Romagna (Italy)</strong> and <strong>Priorat (Catalonia, Spain)</strong>.</p>
-            <p><strong>Languages:</strong> 
-                <span class="lang-badge">🇬🇧 English</span>
-                <span class="lang-badge">🇪🇸 Spanish</span>
-                <span class="lang-badge">🇵🇹 Portuguese</span>
-                <span class="lang-badge">🇮🇹 Italian</span>
-                <span class="lang-badge">🇫🇷 French</span>
-            </p>
-            <div class="social-links" id="contact">
-                <a href="mailto:giovannifrancisco.molinaaguirre@unicas.it">📧 Email</a>
-                <a href="https://linkedin.com/in/giovanni-molina-aguirre-89855743" target="_blank">💼 LinkedIn</a>
-                <a href="cv.pdf">📄 CV (PDF)</a>
-            </div>
-        </div>
-        <div class="profile-image">
-            <img src="photo.jpg" alt="Giovanni Molina">
-        </div>
-    </div>
-
-    <!-- TIVAF model teaser -->
+    <!-- TIVAF model teaser (main content first) -->
     <h2 class="section-title">The TIVAF framework in brief</h2>
     <p class="section-subtitle">Four pillars – a health check‑up for wine tourism regions</p>
 
     <div class="pillars-grid">
-        <!-- Pillar 1 -->
         <div class="pillar-card">
             <div class="pillar-number">01</div>
             <div class="pillar-title">Institutional thickness</div>
             <div class="pillar-desc">Do wineries act as a team? We measure shared infrastructure, consortium logos, and inter‑winery promotion.</div>
             <div class="pillar-quote">🔍 Example: presence of DOQ/DOCG plaques, staff mentioning appellation rules.</div>
         </div>
-        <!-- Pillar 2 -->
         <div class="pillar-card">
             <div class="pillar-number">02</div>
             <div class="pillar-title">Multi‑channel price mapping</div>
             <div class="pillar-desc">Who captures value? Compare the same wine in supermarkets, specialist shops, and winery door.</div>
             <div class="pillar-quote">🛒 → 🍷 → 🏠 “The tourism premium reveals direct value for the winery.”</div>
         </div>
-        <!-- Pillar 3 -->
         <div class="pillar-card">
             <div class="pillar-number">03</div>
             <div class="pillar-title">Digital terroir & narrative</div>
             <div class="pillar-desc">We score websites and social media on narrative focus, information density, engagement, and experiential storytelling.</div>
             <div class="pillar-quote">📱 “Selling a story, not just a bottle.”</div>
         </div>
-        <!-- Pillar 4 -->
         <div class="pillar-card">
             <div class="pillar-number">04</div>
             <div class="pillar-title">Hedonic pricing (exploratory)</div>
@@ -402,7 +374,7 @@
         </div>
     </div>
 
-    <!-- Clear call-to-action: choose a version -->
+    <!-- Version selection -->
     <div class="version-selection">
         <p>📌 <strong>To explore the complete framework, select your preferred guide below:</strong></p>
         <div class="button-group">
@@ -416,14 +388,39 @@
         💡 <strong>Why two versions?</strong> TIVAF is designed for both wine enthusiasts and researchers. Choose the path that matches your background.
     </div>
 
-    <!-- Collaboration call -->
+    <!-- Collaboration call (still before author info) -->
     <div style="background: #fef3e8; border-radius: 1.5rem; padding: 1.5rem; text-align: center; margin: 2rem 0;">
         <p style="font-size: 1.1rem;">📢 <strong>Apply TIVAF to your region</strong> – I collaborate with wine consortia, DMOs, and researchers. <a href="mailto:giovannifrancisco.molinaaguirre@unicas.it" style="color: var(--wine);">Get in touch →</a></p>
+    </div>
+
+    <!-- Profile card moved to the bottom (right before footer) -->
+    <div class="profile-card" id="contact">
+        <div class="profile-text">
+            <div class="about-label">About the author</div>
+            <h2>Giovanni F. Molina Aguirre</h2>
+            <div class="title">Rural Economist & Heritage Methodologist | PhD Candidate</div>
+            <p>I design diagnostic tools for wine regions, geographical indications, and rural territories – bridging economic analysis, institutional diagnostics, and heritage interpretation. My current research compares wine area development in <strong>Emilia-Romagna (Italy)</strong> and <strong>Priorat (Catalonia, Spain)</strong>.</p>
+            <p><strong>Languages:</strong> 
+                <span class="lang-badge">🇬🇧 English</span>
+                <span class="lang-badge">🇪🇸 Spanish</span>
+                <span class="lang-badge">🇵🇹 Portuguese</span>
+                <span class="lang-badge">🇮🇹 Italian</span>
+                <span class="lang-badge">🇫🇷 French</span>
+            </p>
+            <div class="social-links">
+                <a href="mailto:giovannifrancisco.molinaaguirre@unicas.it">📧 Email</a>
+                <a href="https://linkedin.com/in/giovanni-molina-aguirre-89855743" target="_blank">💼 LinkedIn</a>
+                <a href="cv.pdf">📄 CV (PDF)</a>
+            </div>
+        </div>
+        <div class="profile-image">
+            <img src="photo.jpg" alt="Giovanni Molina">
+        </div>
     </div>
 </div>
 
 <div class="footer">
-    <p>© 2025 Giovanni F. Molina Aguirre – University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV) – GRATET</p>
+    <p>© 2025 Giovanni F. Molina Aguirre – University of Cassino and Southern Lazio (UNICAS) & Universitat Rovira i Virgili (URV)</p>
     <p>TIVAF is an open‑access diagnostic framework. <a href="tivaf-rookie.html">Rookie guide</a> | <a href="tivaf-expert.html">Expert version</a></p>
 </div>
 </body>
